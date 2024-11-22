@@ -5,8 +5,200 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ngbatz Studios</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #111;
+            color: #eee;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            color: #00aaff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header Section */
+        .hero {
+            height: 100vh;
+            background: url('data/images/hero-background.jpg') no-repeat center center/cover;
+            position: relative;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .hero .logo {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .hero-button {
+            padding: 10px 20px;
+            background: #00aaff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background 0.3s;
+        }
+
+        .hero-button:hover {
+            background: #007acc;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            z-index: 1000;
+        }
+
+        nav a {
+            margin: 0 15px;
+            font-size: 1em;
+            font-weight: bold;
+            color: #fff;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #00aaff;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .about-content img {
+            max-width: 300px;
+            border-radius: 10px;
+        }
+
+        /* Games Section */
+        .game-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .game-card {
+            background: #222;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .game-card:hover {
+            transform: scale(1.05);
+        }
+
+        .game-card img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background: #00aaff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        .button:hover {
+            background: #007acc;
+        }
+
+        /* Contact Section */
+        .contact a {
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            color: #888;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #00aaff;
+        }
+
+        footer a:hover {
+            color: #007acc;
+        }
+    </style>
 </head>
 <body>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#games">Games</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
     <!-- Header Section -->
     <header class="hero">
         <div class="hero-overlay">
