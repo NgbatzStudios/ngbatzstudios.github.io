@@ -9,40 +9,52 @@
 <body>
     <!-- Header Section -->
     <header class="hero">
-        <img src="data/images/logo.png" alt="Ngbatz Studios Logo" class="logo">
-        <h1>Welcome to Ngbatz Studios</h1>
-        <p>Creating worlds, one pixel at a time.</p>
+        <div class="hero-overlay">
+            <img src="data/images/logo.png" alt="Ngbatz Studios Logo" class="logo">
+            <h1>Welcome to Ngbatz Studios</h1>
+            <p>Creating worlds, one pixel at a time.</p>
+            <a href="#games" class="hero-button">Explore Our Games</a>
+        </div>
     </header>
 
     <!-- About Section -->
-    <section class="about">
+    <section class="about" id="about">
         <h2>About Us</h2>
-        <p>At Ngbatz Studios, we are passionate about crafting immersive experiences that inspire and entertain gamers worldwide.</p>
-        <img src="data/images/team.jpg" alt="Our Team">
+        <div class="about-content">
+            <p>At Ngbatz Studios, we are passionate about crafting immersive experiences that inspire and entertain gamers worldwide. Our team of talented developers, artists, and dreamers work together to bring innovative ideas to life.</p>
+            <img src="data/images/team.jpg" alt="Our Team">
+        </div>
     </section>
 
     <!-- Games Section -->
-    <section class="games">
+    <section class="games" id="games">
         <h2>Our Games</h2>
         <div class="game-gallery">
             <div class="game-card">
-                <h3>monke run</h3>
-                <p>Run jump talk to monke slap kids don’t be toxic and just have fun.</p>
+                <h3>Monke Run</h3>
+                <img src="data/images/monke_run.jpg" alt="Monke Run">
+                <p>Run, jump, talk to monke, slap kids, don’t be toxic, and just have fun.</p>
                 <a href="https://www.meta.com/en-gb/experiences/monke-run/5783730908381017/" class="button">Download</a>
             </div>
+            <!-- Additional game cards can be added here -->
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="contact">
+    <section class="contact" id="contact">
         <h2>Contact Us</h2>
-        <p>Have a question or want to collaborate? Reach out!</p>
+        <p>Have a question or want to collaborate? Reach out to us at any time!</p>
         <a href="mailto:ngbatzstudiosofficial@gmail.com" class="button">Email Us</a>
     </section>
 
     <!-- Footer -->
     <footer>
         <p>© 2024 Ngbatz Studios. All rights reserved.</p>
+        <p>
+            <a href="#about">About</a> | 
+            <a href="#games">Games</a> | 
+            <a href="#contact">Contact</a>
+        </p>
     </footer>
 </body>
 </html>
