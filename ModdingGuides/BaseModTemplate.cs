@@ -1,11 +1,10 @@
 using UnityEngine;
-using EscapePoland.Mods;
+using EscapePoland.ModdingAPI;
 
 namespace YourFirstMod
 {
     public class BaseMod : ModHandler
     {
-        
         // Run when the game starts
         public void Start()
         {
