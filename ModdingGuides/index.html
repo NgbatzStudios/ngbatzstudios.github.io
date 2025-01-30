@@ -6,37 +6,63 @@
     <title>Modding Guide - Ngbatz Studios</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        /* General Styles */
         body {
-            display: flex;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #1a1a1a;
+            color: #ddd;
+            scroll-behavior: smooth;
         }
 
-        /* Sidebar */
+        a {
+            color: #00aaff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Sidebar Navigation */
         .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
             width: 250px;
             height: 100vh;
-            background: #222;
-            position: fixed;
+            background: #111;
             padding: 20px;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
         }
 
         .sidebar h2 {
             color: #00aaff;
+            font-size: 1.5em;
             text-align: center;
+            margin-bottom: 20px;
         }
 
-        .sidebar a {
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+
+        .sidebar ul li a {
             display: block;
-            color: #eee;
             padding: 10px;
-            margin: 5px 0;
-            background: #333;
-            text-decoration: none;
+            background: #222;
             border-radius: 5px;
-            transition: 0.3s;
+            transition: background 0.3s;
         }
 
-        .sidebar a:hover {
+        .sidebar ul li a:hover {
             background: #00aaff;
         }
 
@@ -44,54 +70,57 @@
         .content {
             margin-left: 270px;
             padding: 20px;
-            max-width: 800px;
         }
 
         section {
-            padding: 50px 0;
+            padding: 50px 20px;
+            background: #222;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        section h2 {
+            color: #00aaff;
         }
     </style>
 </head>
 <body>
     <div class="sidebar">
         <h2>Modding Guide</h2>
-        <a href="#introduction">Introduction</a>
-        <a href="#setup">Setting Up</a>
-        <a href="#coding">Basic Coding</a>
-        <a href="#assets">Adding Assets</a>
-        <a href="#testing">Testing & Debugging</a>
-        <a href="#publishing">Publishing</a>
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#setup">Setup</a></li>
+            <li><a href="#basics">Modding Basics</a></li>
+            <li><a href="#advanced">Advanced Techniques</a></li>
+            <li><a href="#troubleshooting">Troubleshooting</a></li>
+        </ul>
     </div>
 
     <div class="content">
         <section id="introduction">
             <h2>Introduction</h2>
-            <p>Welcome to the Ngbatz Studios modding guide. Here you'll learn how to create mods for our games.</p>
+            <p>Welcome to the modding guide! Here you'll learn how to modify your game step by step.</p>
         </section>
 
         <section id="setup">
-            <h2>Setting Up</h2>
-            <p>Install the required tools and set up your development environment.</p>
+            <h2>Setup</h2>
+            <p>To begin modding, ensure you have the required tools and environment ready.</p>
         </section>
 
-        <section id="coding">
-            <h2>Basic Coding</h2>
-            <p>Learn how to write scripts and modify game behavior.</p>
+        <section id="basics">
+            <h2>Modding Basics</h2>
+            <p>Learn about core modding concepts and how to modify game assets.</p>
         </section>
 
-        <section id="assets">
-            <h2>Adding Assets</h2>
-            <p>Import and use custom textures, models, and sounds.</p>
+        <section id="advanced">
+            <h2>Advanced Techniques</h2>
+            <p>Take your modding skills further with scripting and code modifications.</p>
         </section>
 
-        <section id="testing">
-            <h2>Testing & Debugging</h2>
-            <p>How to test your mod and fix common issues.</p>
-        </section>
-
-        <section id="publishing">
-            <h2>Publishing</h2>
-            <p>Share your mod with others and get feedback.</p>
+        <section id="troubleshooting">
+            <h2>Troubleshooting</h2>
+            <p>Encountering issues? Find solutions to common problems here.</p>
         </section>
     </div>
 </body>
