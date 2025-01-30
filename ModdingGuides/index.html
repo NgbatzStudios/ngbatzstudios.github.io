@@ -69,7 +69,7 @@
         /* Content */
         .content {
             margin-left: 270px;
-            padding: 20px;
+            padding: 21px;
         }
 
         section {
@@ -92,7 +92,7 @@
             <li><a href="#introduction">Introduction</a></li>
             <li><a href="#setup">Setup</a></li>
             <li><a href="#basics">Modding Basics</a></li>
-            <li><a href="#advanced">Advanced Techniques</a></li>
+            <li><a href="#Developers">Making Mods</a></li>
             <li><a href="#troubleshooting">Troubleshooting</a></li>
         </ul>
     </div>
@@ -100,27 +100,36 @@
     <div class="content">
         <section id="introduction">
             <h2>Introduction</h2>
-            <p>Welcome to the modding guide! Here you'll learn how to modify your game step by step.</p>
+            <p>Welcome to the modding guide! Here you'll learn how to mod your game step by step.</p>
         </section>
 
         <section id="setup">
             <h2>Setup</h2>
-            <p>To begin modding, ensure you have the required tools and environment ready.</p>
+            <p>To begin modding, ensure you have the core mods installed and NG Launcher (optional) ready for the next steps.</p>
         </section>
 
         <section id="basics">
             <h2>Modding Basics</h2>
-            <p>Learn about core modding concepts and how to modify game assets.</p>
+            <p>Learn how to install core mods and other peoples mods!</p>
+            <p>You can find mods either here: https://mod.io/g/escape-poland or here: https://discord.gg/VpvhPTPr4B</p>
+            <p>For core mods you can find them in the NG Launcher or in the discord which is stated above.</p>
         </section>
 
-        <section id="advanced">
-            <h2>Advanced Techniques</h2>
-            <p>Take your modding skills further with scripting and code modifications.</p>
+        <section id="Developers">
+            <h2>Making Mods</h2>
+            <p>To make mods make sure you have either Visual Studio or Visual Studio Code installed.</p>
+            <p>Next go to your games files and you will see a folder name "Mods" now go in there.</p>
+            <p>Once you are in the "Mods" folder create a new folder this will be the name of the mod and where all the mods files will go.</p>
+            <p>Once you have creaated your mods main folder you can create a new c# script. Once created you will need to open it in Visual Studio or Visual Studio Code</p>
+            <p>Once opened there will be nothing in the file so now copy and paste this base script which you can find [here](https://github.com/ngbatzstudios/NgbatzStudios/ModdingGuides/BaseModTemplate.cs)</p>
+            <p>Now you see where there is the Namespace change the bit after that to the main folders name and for any scripts in sub-folders do the same but add a dot with the sub-folders name eg. YourFirstMod.FunnyFolder</p>
+            <p>Once that's done get to coding!</p>
         </section>
 
         <section id="troubleshooting">
             <h2>Troubleshooting</h2>
             <p>Encountering issues? Find solutions to common problems here.</p>
+            <p>If you are experiencing problems with mods compiling that usually means mods are broken. We try not to do anything that causes modding to break.</p>
         </section>
     </div>
 </body>
