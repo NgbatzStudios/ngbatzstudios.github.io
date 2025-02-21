@@ -1,267 +1,615 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ngbatz Studios</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background-color: #111;
-            color: #eee;
-            scroll-behavior: smooth;
-        }
-
-        a {
-            color: #00aaff;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* Header Section */
-        .hero {
-            height: 100vh;
-            background: url('data/images/hero-background.jpg') no-repeat center center/cover;
-            position: relative;
-            text-align: center;
-            color: #fff;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.6);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .hero .logo {
-            max-width: 200px;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-        }
-
-        .hero p {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-        }
-
-        .hero-button {
-            padding: 10px 20px;
-            background: #00aaff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            font-size: 1em;
-            cursor: pointer;
-            text-transform: uppercase;
-            transition: background 0.3s;
-        }
-
-        .hero-button:hover {
-            background: #007acc;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            display: flex;
-            justify-content: center;
-            padding: 10px;
-            z-index: 1000;
-        }
-
-        nav a {
-            margin: 0 15px;
-            font-size: 1em;
-            font-weight: bold;
-            color: #fff;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #00aaff;
-        }
-
-        /* Section Styles */
-        section {
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .about-content {
-            max-width: 800px;
-            margin: auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            align-items: center;
-        }
-
-        .about-content img {
-            max-width: 300px;
-            border-radius: 10px;
-        }
-
-        /* Games Section */
-        .game-gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .game-card {
-            background: #222;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            width: 300px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s;
-        }
-
-        .game-card:hover {
-            transform: scale(1.05);
-        }
-
-        .game-card img {
-            max-width: 100%;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
-
-        .button {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 15px;
-            background: #00aaff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-transform: uppercase;
-        }
-
-        .button:hover {
-            background: #007acc;
-        }
-
-        /* Contact Section */
-        .contact a {
-            display: inline-block;
-            margin-top: 10px;
-        }
-
-        /* Footer */
-        footer {
-            background: #000;
-            color: #888;
-            padding: 20px;
-            text-align: center;
-        }
-
-        footer a {
-            color: #00aaff;
-        }
-
-        footer a:hover {
-            color: #007acc;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ngbatz Studios</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --primary-color: #00aaff;
+      --primary-hover: #007acc;
+      --bg-color: #111;
+      --text-color: #eee;
+      --secondary-bg: #222;
+      --footer-bg: #000;
+      --footer-text: #888;
+    }
+    
+    ::-webkit-scrollbar {
+      width: 12px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #222;
+      border-radius: 6px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: var(--primary-color);
+      border-radius: 6px;
+      border: 3px solid #222;
+    }
+    /* Firefox */
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: var(--primary-color) #222;
+    }
+    
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    a:hover {
+      color: var(--primary-hover);
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      padding: 8px 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    nav ul li {
+      margin: 0 10px;
+    }
+    nav ul li a {
+      font-size: 0.95rem;
+      font-weight: bold;
+    }
+    
+    /* Hero Section */
+    header.hero {
+      height: 100vh;
+      background: url('data/images/hero-background.jpg') no-repeat center center/cover;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    header.hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 20px;
+      animation: fadeIn 1.5s ease-out;
+    }
+    .hero-content h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+    .hero-content p {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+    }
+    .hero-button {
+      padding: 12px 25px;
+      background: var(--primary-color);
+      border: none;
+      border-radius: 50px;
+      font-size: 1rem;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.3s;
+      color: #fff;
+    }
+    .hero-button:hover {
+      background: var(--primary-hover);
+      color: #fff;
+    }
+    
+    /* Section Base Styles */
+    section {
+      padding: 100px 20px;
+      text-align: center;
+      scroll-margin-top: 80px;
+    }
+    section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      position: relative;
+      display: inline-block;
+    }
+    section h2::after {
+      content: '';
+      width: 50%;
+      height: 3px;
+      background: var(--primary-color);
+      position: absolute;
+      bottom: -10px;
+      left: 25%;
+    }
+    .content-wrapper {
+      max-width: 900px;
+      margin: auto;
+      padding: 0 20px;
+    }
+    .content-wrapper p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    
+    /* Games Section */
+    .game-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    .game-card {
+      background: var(--secondary-bg);
+      border-radius: 15px;
+      padding: 30px;
+      width: 320px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    }
+    .game-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+    }
+    .game-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+    .game-card p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+    .button {
+      padding: 10px 20px;
+      background: var(--primary-color);
+      border: none;
+      border-radius: 50px;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.3s;
+      color: #fff;
+    }
+    .button:hover {
+      background: var(--primary-hover);
+      color: #fff; /* Force text to remain white */
+    }
+    
+    /* Process Section */
+    .process-steps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .step {
+      background: var(--secondary-bg);
+      padding: 20px;
+      border-radius: 10px;
+      width: 280px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s;
+    }
+    .step:hover {
+      transform: translateY(-5px);
+    }
+    .step h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+    .step p {
+      font-size: 0.95rem;
+    }
+    
+    /* Features Section (New) */
+    #features .features-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .feature-card {
+      background: var(--secondary-bg);
+      padding: 20px;
+      border-radius: 10px;
+      width: 280px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s;
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+    .feature-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+    .feature-card p {
+      font-size: 0.95rem;
+    }
+    
+    /* Testimonials Section */
+    .testimonials {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      max-width: 800px;
+      margin: auto;
+    }
+    .testimonial {
+      background: var(--secondary-bg);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s;
+    }
+    .testimonial:hover {
+      transform: translateY(-5px);
+    }
+    .testimonial p {
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+    .testimonial span {
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+    
+    /* Fun Facts Section */
+    .funfacts-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .fact {
+      background: var(--secondary-bg);
+      padding: 20px;
+      border-radius: 10px;
+      width: 250px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s;
+    }
+    .fact:hover {
+      transform: translateY(-5px);
+    }
+    .fact h3 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    .fact p {
+      font-size: 1rem;
+      color: var(--primary-color);
+    }
+    
+    /* Latest News Section */
+    .news-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .news-card {
+      background: var(--secondary-bg);
+      border-radius: 15px;
+      padding: 20px;
+      width: 320px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .news-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+    }
+    .news-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    .news-card p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+    .news-card a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 15px;
+      background: var(--primary-color);
+      border-radius: 50px;
+      font-size: 0.9rem;
+      color: #fff;
+      transition: background 0.3s;
+    }
+    .news-card a:hover {
+      background: var(--primary-hover);
+      color: #fff;
+    }
+    
+    /* Media Section (New) */
+    #media .media-wrapper {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+    #media .media-wrapper iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+      border-radius: 10px;
+    }
+    
+    /* Contact Section */
+    .contact p {
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+    }
+    .contact-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--footer-bg);
+      color: var(--footer-text);
+      padding: 25px 20px;
+      text-align: center;
+    }
+    footer p {
+      margin: 5px 0;
+    }
+    footer a {
+      margin: 0 10px;
+    }
+    
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.8rem;
+      }
+      .hero-content p {
+        font-size: 1.1rem;
+      }
+      nav ul li {
+        margin: 0 6px;
+      }
+      section h2 {
+        font-size: 2rem;
+      }
+      .process-steps, .game-gallery, .funfacts-grid, .news-gallery, 
+      .features-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+      .contact-buttons {
+        flex-direction: column;
+      }
+      #media .media-wrapper iframe {
+        height: 300px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#games">Games</a>
-        <a href="#contact">Contact</a>
-    </nav>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#games">Games</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#funfacts">Fun Facts</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#media">Media</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Welcome to Ngbatz Studios</h1>
+      <p>Creating immersive digital experiences that redefine gaming.</p>
+      <a href="#games" class="hero-button">Discover Our Games</a>
+    </div>
+  </header>
+  
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Us</h2>
+    <div class="content-wrapper">
+      <p>
+        At Ngbatz Studios, our mission is to craft captivating worlds that blur the lines between reality and imagination. Our innovative team works passionately to push the boundaries of interactive entertainment.
+      </p>
+    </div>
+  </section>
 
-    <!-- Header Section -->
-    <header class="hero">
-        <div class="hero-overlay">
-            <h1>Welcome to NgbatzStudios</h1>
-            <p>Creating worlds, one pixel at a time.</p>
-            <a href="#games" class="hero-button">Explore Our Games</a>
-        </div>
-    </header>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <h2>About Us</h2>
-        <div class="about-content">
-            <p>At Ngbatz Studios, we are passionate about crafting immersive experiences that inspire and entertain gamers worldwide. Our team of talented developers, artists, and dreamers work together to bring innovative ideas to life.</p>
-        </div>
-    </section>
-
-    <!-- Games Section -->
-    <section class="games" id="games">
-        <h2>Our Games</h2>
-        <div class="game-gallery">
-            <div class="game-card">
-                <h3>Monke Run</h3>
-                <p>Run, jump, talk to monke, slap kids, don’t be toxic, and just have fun.</p>
-                <a href="https://www.meta.com/en-gb/experiences/monke-run/5783730908381017/" class="button">Download</a>
-            </div>
-            <div class="game-card">
-                <h3>Escape Poland</h3>
-                <p>Do you have what it takes to destroy the evil Poland boss. Because I don't 😭</p>
-                <a href="https://ngbatz.itch.io/ep" class="button">Download</a>
-            </div>
-            <!-- Additional game cards can be added here -->
-        </div>
-    </section>
-        <!-- <section class="Launcher" id="games"> 
-        <h2>Software</h2>
-        <div class="game-gallery">
-            <div class="game-card">
-                <h3>NG Launcher</h3>
-                <p>This is the official launcher where you can download all of our games. Written full in c#. If you can't download wait for a bit then try again otherwise contact us.</p>
-                <a href="https://github.com/NgbatzStudios/NG-Launcher/releases/latest/download/NgLauncherInstaller.exe" class="button">Download Windows</a>
-                <a href="https://github.com/NgbatzStudios/NG-Launcher/releases/latest/download/NgLauncherInstaller.deb" class="button">Download Debian</a>
-            </div>
-        </div>
-    </section> -->
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <h2>Contact Us</h2>
-        <p>Have a question or want to collaborate? Reach out to us at any time!</p>
-        <a href="mailto:ngbatzstudiosofficial@gmail.com" class="button">Email Us</a> 
-        <a href="https://discord.gg/VpvhPTPr4B" class="button">Discord</a>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>© 2025 Ngbatz Studios. All rights reserved.</p>
+  <section id="games">
+    <h2>Our Games</h2>
+    <div class="game-gallery">
+      <div class="game-card">
+        <h3>Escape Poland</h3>
         <p>
-            <a href="#about">About</a> | 
-            <a href="#games">Games</a> | 
-            <a href="#contact">Contact</a> |
-            <a href="https://github.com/ngbatzstudios">Github</a>
+          Embark on an epic journey full of challenges and surprises at every turn.
         </p>
-    </footer>
+        <a href="https://ngbatz.itch.io/ep" class="button">Download</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Process Section -->
+  <section id="process">
+    <h2>Our Process</h2>
+    <div class="content-wrapper">
+      <p>
+        We believe creativity thrives in a structured process. From brainstorming to launch, every step is driven by innovation and passion.
+      </p>
+      <div class="process-steps">
+        <div class="step">
+          <h3>Concept</h3>
+          <p>Ideation and brainstorming groundbreaking ideas.</p>
+        </div>
+        <div class="step">
+          <h3>Design</h3>
+          <p>Crafting visually stunning and user-friendly interfaces.</p>
+        </div>
+        <div class="step">
+          <h3>Development</h3>
+          <p>Building robust experiences with cutting-edge technology. (aka Unity)</p>
+        </div>
+        <div class="step">
+          <h3>Launch</h3>
+          <p>Releasing polished products that captivate audiences.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Features Section (New) -->
+  <section id="features">
+    <h2>Features</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <h3>Immersive Gameplay</h3>
+        <p>Dive into interactive worlds that challenge and thrill you.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Stunning Visuals</h3>
+        <p>Enjoy breathtaking graphics and art design that bring stories to life.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Engaging Storyline</h3>
+        <p>Follow narratives that captivate and inspire every step of your adventure.</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Testimonials Section -->
+  <section id="testimonials">
+    <h2>Testimonials</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>"very gooood game"</p>
+        <span>- Bmnbed2</span>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Fun Facts Section -->
+  <section id="funfacts">
+    <h2>Fun Facts</h2>
+    <div class="funfacts-grid">
+      <div class="fact">
+        <h3>2+</h3>
+        <p>Years in the Industry</p>
+      </div>
+      <div class="fact">
+        <h3>2+</h3>
+        <p>Games Developed</p>
+      </div>
+      <div class="fact">
+        <h3>1+</h3>
+        <p>Players Worldwide</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Latest News Section -->
+  <section id="news">
+    <h2>Latest News</h2>
+    <div class="news-gallery">
+      <div class="news-card">
+        <h3>Behind the Scenes</h3>
+        <p>Get an exclusive look into our creative process and the magic behind our games.</p>
+        <a href="https://ngbatzstudios.github.io/behind">Read More</a>
+      </div>
+      <div class="news-card">
+        <h3>News</h3>
+        <p>Stay tuned for our upcoming releases and everything else!</p>
+        <a href="https://ngbatzstudios.github.io/news">Read More</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <div class="content-wrapper">
+      <p>
+        Have a question or want to collaborate? We'd love to hear from you.
+      </p>
+      <div class="contact-buttons">
+        <a href="mailto:ngbatzstudiosofficial@gmail.com" class="button">Email Us</a>
+        <a href="https://discord.gg/VpvhPTPr4B" class="button">Join Discord</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Ngbatz Studios. All rights reserved.</p>
+    <p>
+      <a href="#about">About</a> | 
+      <a href="#games">Games</a> | 
+      <a href="#process">Process</a> | 
+      <a href="#features">Features</a> | 
+      <a href="#testimonials">Testimonials</a> | 
+      <a href="#funfacts">Fun Facts</a> | 
+      <a href="#news">News</a> | 
+      <a href="#media">Media</a> | 
+      <a href="#contact">Contact</a> | 
+      <a href="https://github.com/ngbatzstudios">Github</a>
+    </p>
+  </footer>
 </body>
 </html>
