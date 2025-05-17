@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ngbatz Studios</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-    rel="stylesheet"
-  />
-  <style>
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ngbatz Studios</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet" />
+    <style>
     :root {
       --primary-color: #00aaff;
       --primary-hover: #007acc;
@@ -18,31 +18,35 @@
       --footer-bg: #000;
       --footer-text: #888;
     }
-    
+
     ::-webkit-scrollbar {
       width: 12px;
     }
+
     ::-webkit-scrollbar-track {
       background: #222;
       border-radius: 6px;
     }
+
     ::-webkit-scrollbar-thumb {
       background-color: var(--primary-color);
       border-radius: 6px;
       border: 3px solid #222;
     }
+
     /* Firefox */
     * {
       scrollbar-width: thin;
       scrollbar-color: var(--primary-color) #222;
     }
-    
+
     /* Reset */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
     body {
       font-family: 'Montserrat', sans-serif;
       background: var(--bg-color);
@@ -50,14 +54,17 @@
       line-height: 1.6;
       scroll-behavior: smooth;
     }
+
     a {
       color: var(--primary-color);
       text-decoration: none;
       transition: color 0.3s;
     }
+
     a:hover {
       color: var(--primary-hover);
     }
+
     nav {
       position: fixed;
       top: 0;
@@ -67,20 +74,23 @@
       z-index: 1000;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     }
+
     nav ul {
       list-style: none;
       display: flex;
       justify-content: center;
       align-items: center;
     }
+
     nav ul li {
       margin: 0 10px;
     }
+
     nav ul li a {
       font-size: 0.95rem;
       font-weight: bold;
     }
-    
+
     /* Hero Section */
     header.hero {
       height: 100vh;
@@ -90,6 +100,7 @@
       align-items: center;
       justify-content: center;
     }
+
     header.hero::before {
       content: '';
       position: absolute;
@@ -100,6 +111,7 @@
       background: rgba(0, 0, 0, 0.6);
       z-index: 1;
     }
+
     .hero-content {
       position: relative;
       z-index: 2;
@@ -107,15 +119,18 @@
       padding: 20px;
       animation: fadeIn 1.5s ease-out;
     }
+
     .hero-content h1 {
       font-size: 3.5rem;
       margin-bottom: 20px;
       letter-spacing: 2px;
     }
+
     .hero-content p {
       font-size: 1.3rem;
       margin-bottom: 30px;
     }
+
     .hero-button {
       padding: 12px 25px;
       background: var(--primary-color);
@@ -127,23 +142,26 @@
       transition: background 0.3s;
       color: #fff;
     }
+
     .hero-button:hover {
       background: var(--primary-hover);
       color: #fff;
     }
-    
+
     /* Section Base Styles */
     section {
       padding: 100px 20px;
       text-align: center;
       scroll-margin-top: 80px;
     }
+
     section h2 {
       font-size: 2.5rem;
       margin-bottom: 40px;
       position: relative;
       display: inline-block;
     }
+
     section h2::after {
       content: '';
       width: 50%;
@@ -153,16 +171,18 @@
       bottom: -10px;
       left: 25%;
     }
+
     .content-wrapper {
       max-width: 900px;
       margin: auto;
       padding: 0 20px;
     }
+
     .content-wrapper p {
       font-size: 1.1rem;
       line-height: 1.8;
     }
-    
+
     /* Games Section */
     .game-gallery {
       display: flex;
@@ -170,6 +190,7 @@
       justify-content: center;
       gap: 30px;
     }
+
     .game-card {
       background: var(--secondary-bg);
       border-radius: 15px;
@@ -178,18 +199,22 @@
       transition: transform 0.3s, box-shadow 0.3s;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
     }
+
     .game-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
     }
+
     .game-card h3 {
       font-size: 1.8rem;
       margin-bottom: 15px;
     }
+
     .game-card p {
       font-size: 1rem;
       margin-bottom: 20px;
     }
+
     .button {
       padding: 10px 20px;
       background: var(--primary-color);
@@ -201,11 +226,13 @@
       transition: background 0.3s;
       color: #fff;
     }
+
     .button:hover {
       background: var(--primary-hover);
-      color: #fff; /* Force text to remain white */
+      color: #fff;
+      /* Force text to remain white */
     }
-    
+
     /* Process Section */
     .process-steps {
       display: flex;
@@ -214,6 +241,7 @@
       gap: 30px;
       margin-top: 30px;
     }
+
     .step {
       background: var(--secondary-bg);
       padding: 20px;
@@ -222,17 +250,20 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
       transition: transform 0.3s;
     }
+
     .step:hover {
       transform: translateY(-5px);
     }
+
     .step h3 {
       margin-bottom: 10px;
       font-size: 1.2rem;
     }
+
     .step p {
       font-size: 0.95rem;
     }
-    
+
     /* Features Section (New) */
     #features .features-grid {
       display: flex;
@@ -241,6 +272,7 @@
       gap: 30px;
       margin-top: 30px;
     }
+
     .feature-card {
       background: var(--secondary-bg);
       padding: 20px;
@@ -249,17 +281,20 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
       transition: transform 0.3s;
     }
+
     .feature-card:hover {
       transform: translateY(-5px);
     }
+
     .feature-card h3 {
       margin-bottom: 10px;
       font-size: 1.2rem;
     }
+
     .feature-card p {
       font-size: 0.95rem;
     }
-    
+
     /* Testimonials Section */
     .testimonials {
       display: flex;
@@ -268,6 +303,7 @@
       max-width: 800px;
       margin: auto;
     }
+
     .testimonial {
       background: var(--secondary-bg);
       padding: 20px;
@@ -275,18 +311,21 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
       transition: transform 0.3s;
     }
+
     .testimonial:hover {
       transform: translateY(-5px);
     }
+
     .testimonial p {
       font-style: italic;
       margin-bottom: 10px;
     }
+
     .testimonial span {
       font-weight: bold;
       font-size: 0.9rem;
     }
-    
+
     /* Fun Facts Section */
     .funfacts-grid {
       display: flex;
@@ -295,6 +334,7 @@
       gap: 30px;
       margin-top: 30px;
     }
+
     .fact {
       background: var(--secondary-bg);
       padding: 20px;
@@ -303,18 +343,21 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
       transition: transform 0.3s;
     }
+
     .fact:hover {
       transform: translateY(-5px);
     }
+
     .fact h3 {
       font-size: 2rem;
       margin-bottom: 10px;
     }
+
     .fact p {
       font-size: 1rem;
       color: var(--primary-color);
     }
-    
+
     /* Latest News Section */
     .news-gallery {
       display: flex;
@@ -323,6 +366,7 @@
       gap: 30px;
       margin-top: 30px;
     }
+
     .news-card {
       background: var(--secondary-bg);
       border-radius: 15px;
@@ -331,19 +375,23 @@
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
       transition: transform 0.3s, box-shadow 0.3s;
     }
+
     .news-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
     }
+
     .news-card h3 {
       font-size: 1.5rem;
       margin-bottom: 10px;
     }
+
     .news-card p {
       font-size: 1rem;
       margin-bottom: 15px;
       line-height: 1.5;
     }
+
     .news-card a {
       display: inline-block;
       margin-top: 10px;
@@ -354,29 +402,32 @@
       color: #fff;
       transition: background 0.3s;
     }
+
     .news-card a:hover {
       background: var(--primary-hover);
       color: #fff;
     }
-    
+
     /* Media Section (New) */
     #media .media-wrapper {
       max-width: 900px;
       margin: 20px auto;
       padding: 20px;
     }
+
     #media .media-wrapper iframe {
       width: 100%;
       height: 500px;
       border: none;
       border-radius: 10px;
     }
-    
+
     /* Contact Section */
     .contact p {
       margin-bottom: 20px;
       font-size: 1.1rem;
     }
+
     .contact-buttons {
       display: flex;
       flex-wrap: wrap;
@@ -384,7 +435,7 @@
       gap: 15px;
       margin-top: 20px;
     }
-    
+
     /* Footer */
     footer {
       background: var(--footer-bg);
@@ -392,224 +443,574 @@
       padding: 25px 20px;
       text-align: center;
     }
+
     footer p {
       margin: 5px 0;
     }
+
     footer a {
       margin: 0 10px;
     }
-    
+
     /* Animations */
     @keyframes fadeIn {
       from {
         opacity: 0;
         transform: translateY(20px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
-    
+
     /* Responsive Styles */
     @media (max-width: 768px) {
       .hero-content h1 {
         font-size: 2.8rem;
       }
+
       .hero-content p {
         font-size: 1.1rem;
       }
+
       nav ul li {
         margin: 0 6px;
       }
+
       section h2 {
         font-size: 2rem;
       }
-      .process-steps, .game-gallery, .funfacts-grid, .news-gallery, 
+
+      .process-steps,
+      .game-gallery,
+      .funfacts-grid,
+      .news-gallery,
       .features-grid {
         flex-direction: column;
         align-items: center;
       }
+
       .contact-buttons {
         flex-direction: column;
       }
+
       #media .media-wrapper iframe {
         height: 300px;
       }
     }
   </style>
-</head>
-<body>
-  <!-- Navigation -->
-  <nav>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#games">Games</a></li>
-      <li><a href="#process">Process</a></li>
-      <li><a href="#features">Features</a></li>
-      <li><a href="#testimonials">Testimonials</a></li>
-      <li><a href="#funfacts">Fun Facts</a></li>
-      <li><a href="#news">News</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-  
-  <!-- Hero Section -->
-  <header class="hero">
-    <div class="hero-content">
-      <h1>Welcome to Ngbatz Studios</h1>
-      <p>Creating immersive digital experiences that redefine gaming.</p>
-      <a href="#games" class="hero-button">Discover Our Games</a>
-    </div>
-  </header>
-  
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Us</h2>
-    <div class="content-wrapper">
-      <p>
-        At Ngbatz Studios, our mission is to craft captivating worlds that blur the lines between reality and imagination. Our innovative team works passionately to push the boundaries of interactive entertainment.
-      </p>
-    </div>
-  </section>
+  </head>
 
-  <section id="games">
-    <h2>Our Games</h2>
-    <div class="game-gallery">
-      <div class="game-card">
-        <h3>Escape Poland</h3>
+  <body>
+    <!-- Navigation -->
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#games">Games</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#funfacts">Fun Facts</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="hero-content">
+        <h1>Welcome to Ngbatz Studios</h1>
+        <p>Creating immersive digital experiences that redefine gaming.</p>
+        <a href="#games" class="hero-button">Discover Our Games</a>
+      </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+      <h2>About Us</h2>
+      <div class="content-wrapper">
         <p>
-          Embark on an epic journey full of challenges and surprises at every turn.
+          At Ngbatz Studios, our mission is to craft captivating worlds that
+          blur the lines between reality and
+          imagination. Our innovative team works passionately to push the
+          boundaries of interactive entertainment.
         </p>
-        <a class="button">Coming Soon!</a>
-        <p> </p>
-        <a href="https://ngbatz.itch.io/ep" class="button">Download Alpha</a>
       </div>
-    </div>
-  </section>
-  
-  <!-- Process Section -->
-  <section id="process">
-    <h2>Our Process</h2>
-    <div class="content-wrapper">
+    </section>
+
+    <section id="games">
+      <h2>Our Games</h2>
+      <div class="game-gallery">
+        <div class="game-card">
+          <h3>Escape Poland</h3>
+          <p>
+            Embark on an epic journey full of challenges and surprises at every
+            turn.
+          </p>
+          <a class="button">Coming Soon!</a>
+          <p> </p>
+          <a href="https://ngbatz.itch.io/ep" class="button">Download Alpha</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process">
+      <h2>Our Process</h2>
+      <div class="content-wrapper">
+        <p>
+          We believe creativity thrives in a structured process. From
+          brainstorming to launch, every step is driven by
+          innovation and passion.
+        </p>
+        <div class="process-steps">
+          <div class="step">
+            <h3>Concept</h3>
+            <p>Ideation and brainstorming groundbreaking ideas.</p>
+          </div>
+          <div class="step">
+            <h3>Design</h3>
+            <p>Crafting visually stunning and user-friendly interfaces.</p>
+          </div>
+          <div class="step">
+            <h3>Development</h3>
+            <p>Building robust experiences with cutting-edge technology. (aka
+              Unity)</p>
+          </div>
+          <div class="step">
+            <h3>Launch</h3>
+            <p>Releasing polished products that captivate audiences.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section (New) -->
+    <section id="features">
+      <h2>Features</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>Immersive Gameplay</h3>
+          <p>Dive into interactive worlds that challenge and thrill you.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Stunning Visuals</h3>
+          <p>Enjoy breathtaking graphics and art design that bring stories to
+            life.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Engaging Storyline</h3>
+          <p>Follow narratives that captivate and inspire every step of your
+            adventure.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+      <h2>Testimonials</h2>
+      <div class="testimonials">
+        <div class="testimonial">
+          <p>"very gooood game"</p>
+          <span>- Bmnbed2</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fun Facts Section -->
+    <section id="funfacts">
+      <h2>Fun Facts</h2>
+      <div class="funfacts-grid">
+        <div class="fact">
+          <h3>2+</h3>
+          <p>Years in the Industry</p>
+        </div>
+        <div class="fact">
+          <h3>2+</h3>
+          <p>Games Developed</p>
+        </div>
+        <div class="fact">
+          <h3>3+</h3>
+          <p>Players Worldwide</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Latest News Section -->
+    <section id="news">
+      <h2>Latest News</h2>
+      <div class="news-gallery">
+        <div class="news-card">
+          <h3>Behind the Scenes</h3>
+          <p>Get an exclusive look into our creative process and the magic
+            behind our games.</p>
+          <a href="https://ngbatzstudios.github.io/behind">Read More</a>
+        </div>
+        <div class="news-card">
+          <h3>News</h3>
+          <p>Stay tuned for our upcoming releases and everything else!</p>
+          <a href="https://ngbatzstudios.github.io/news">Read More</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <h2>Contact Us</h2>
+      <div class="content-wrapper">
+        <p>
+          Have a question or want to collaborate? We'd love to hear from you.
+        </p>
+        <div class="contact-buttons">
+          <a href="mailto:ngbatzstudiosofficial@gmail.com" class="button">Email
+            Us</a>
+          <a href="https://discord.gg/VpvhPTPr4B" class="button">Join
+            Discord</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2025 Ngbatz Studios. All rights reserved.</p>
       <p>
-        We believe creativity thrives in a structured process. From brainstorming to launch, every step is driven by innovation and passion.
+        <a href="#about">About</a> |
+        <a href="#games">Games</a> |
+        <a href="#process">Process</a> |
+        <a href="#features">Features</a> |
+        <a href="#testimonials">Testimonials</a> |
+        <a href="#funfacts">Fun Facts</a> |
+        <a href="#news">News</a> |
+        <a href="#contact">Contact</a> |
+        <a href="https://github.com/ngbatzstudios">Github</a>
       </p>
-      <div class="process-steps">
-        <div class="step">
-          <h3>Concept</h3>
-          <p>Ideation and brainstorming groundbreaking ideas.</p>
-        </div>
-        <div class="step">
-          <h3>Design</h3>
-          <p>Crafting visually stunning and user-friendly interfaces.</p>
-        </div>
-        <div class="step">
-          <h3>Development</h3>
-          <p>Building robust experiences with cutting-edge technology. (aka Unity)</p>
-        </div>
-        <div class="step">
-          <h3>Launch</h3>
-          <p>Releasing polished products that captivate audiences.</p>
-        </div>
-      </div>
+    </footer>
+
+    <div id="account-icon">👤</div>
+
+    <div id="account-dropdown">
+      <div id="account-options"></div>
     </div>
-  </section>
-  
-  <!-- Features Section (New) -->
-  <section id="features">
-    <h2>Features</h2>
-    <div class="features-grid">
-      <div class="feature-card">
-        <h3>Immersive Gameplay</h3>
-        <p>Dive into interactive worlds that challenge and thrill you.</p>
+
+    <div id="auth-overlay"></div>
+
+    <div id="auth-dialog">
+      <div id="auth-dialog-header">
+        <span id="auth-dialog-title"></span>
+        <button id="close-auth-dialog">✖</button>
       </div>
-      <div class="feature-card">
-        <h3>Stunning Visuals</h3>
-        <p>Enjoy breathtaking graphics and art design that bring stories to life.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Engaging Storyline</h3>
-        <p>Follow narratives that captivate and inspire every step of your adventure.</p>
-      </div>
+      <div id="auth-message"></div>
+      <div id="auth-dialog-body"></div>
+      <button id="submit-auth"></button>
     </div>
-  </section>
-  
-  <!-- Testimonials Section -->
-  <section id="testimonials">
-    <h2>Testimonials</h2>
-    <div class="testimonials">
-      <div class="testimonial">
-        <p>"very gooood game"</p>
-        <span>- Bmnbed2</span>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Fun Facts Section -->
-  <section id="funfacts">
-    <h2>Fun Facts</h2>
-    <div class="funfacts-grid">
-      <div class="fact">
-        <h3>2+</h3>
-        <p>Years in the Industry</p>
-      </div>
-      <div class="fact">
-        <h3>2+</h3>
-        <p>Games Developed</p>
-      </div>
-      <div class="fact">
-        <h3>3+</h3>
-        <p>Players Worldwide</p>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Latest News Section -->
-  <section id="news">
-    <h2>Latest News</h2>
-    <div class="news-gallery">
-      <div class="news-card">
-        <h3>Behind the Scenes</h3>
-        <p>Get an exclusive look into our creative process and the magic behind our games.</p>
-        <a href="https://ngbatzstudios.github.io/behind">Read More</a>
-      </div>
-      <div class="news-card">
-        <h3>News</h3>
-        <p>Stay tuned for our upcoming releases and everything else!</p>
-        <a href="https://ngbatzstudios.github.io/news">Read More</a>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <h2>Contact Us</h2>
-    <div class="content-wrapper">
-      <p>
-        Have a question or want to collaborate? We'd love to hear from you.
-      </p>
-      <div class="contact-buttons">
-        <a href="mailto:ngbatzstudiosofficial@gmail.com" class="button">Email Us</a>
-        <a href="https://discord.gg/VpvhPTPr4B" class="button">Join Discord</a>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Ngbatz Studios. All rights reserved.</p>
-    <p>
-      <a href="#about">About</a> | 
-      <a href="#games">Games</a> | 
-      <a href="#process">Process</a> | 
-      <a href="#features">Features</a> | 
-      <a href="#testimonials">Testimonials</a> | 
-      <a href="#funfacts">Fun Facts</a> | 
-      <a href="#news">News</a> | 
-      <a href="#contact">Contact</a> | 
-      <a href="https://github.com/ngbatzstudios">Github</a>
-    </p>
-  </footer>
-</body>
+
+    <style>
+    #account-icon {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      background: var(--primary-color);
+      color: #fff;
+      border-radius: 50%;
+      text-align: center;
+      cursor: pointer;
+      user-select: none;
+      z-index: 2000;
+    }
+
+    #account-dropdown {
+      position: fixed;
+      bottom: 20px;
+      left: 68px;
+      width: 0;
+      overflow: hidden;
+      background: var(--secondary-bg);
+      border-radius: 10px;
+      transition: width .25s;
+      z-index: 1999;
+    }
+
+    #account-dropdown.open {
+      width: 180px;
+    }
+
+    #account-options {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+    }
+
+    #account-options button {
+      margin: 4px 0;
+      padding: 8px;
+      background: var(--primary-color);
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      text-align: left;
+      cursor: pointer;
+      transition: background .3s;
+    }
+
+    #account-options button:hover {
+      background: var(--primary-hover);
+    }
+
+    #auth-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 2999;
+    }
+
+    /* Dialog */
+    #auth-dialog {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 320px;
+      padding: 30px;
+      background: var(--secondary-bg);
+      border-radius: 10px;
+      box-shadow:
+        0 0 20px rgba(0, 170, 255, 0.7),
+        0 4px 10px rgba(0, 0, 0, 0.4);
+      z-index: 3000;
+    }
+
+    #auth-dialog-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      color: #fff;
+    }
+
+    #auth-message {
+      min-height: 1.2em;
+      margin-bottom: 12px;
+      color: #e74c3c;
+      font-size: .9rem;
+    }
+
+    #auth-dialog-body input {
+      width: 100%;
+      margin-bottom: 12px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background: #333;
+      color: #fff;
+    }
+
+    #submit-auth,
+    #close-auth-dialog {
+      background: var(--primary-color);
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background .3s;
+      font-size: .9rem;
+    }
+
+    #close-auth-dialog {
+      background: transparent;
+      font-size: 1.1rem;
+      padding: 0;
+    }
+
+    #submit-auth:hover {
+      background: var(--primary-hover);
+    }
+  </style>
+
+    <script type="module">
+    import { createClient } from 'https://esm.sh/@supabase/supabase-js'
+
+    const supabase = createClient(
+      'https://smfttfdkzcfqblovmtiu.supabase.co',
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNtZnR0ZmRremNmcWJsb3ZtdGl1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDczODkwMzQsImV4cCI6MjA2Mjk2NTAzNH0.LYD6ztSzML9iZceBijQUv9xnXzYjh2fsmDE2r56NmrY',
+      { auth: { persistSession: false, detectSessionInUrl: false } }
+    )
+
+    const icon = document.getElementById('account-icon')
+    const dropdown = document.getElementById('account-dropdown')
+    const opts = document.getElementById('account-options')
+    const overlay = document.getElementById('auth-overlay')
+    const dialog = document.getElementById('auth-dialog')
+    const titleEl = document.getElementById('auth-dialog-title')
+    const msgEl = document.getElementById('auth-message')
+    const bodyEl = document.getElementById('auth-dialog-body')
+    const closeBtn = document.getElementById('close-auth-dialog')
+    const submitBtn = document.getElementById('submit-auth')
+
+    let formType = ''  
+    icon.addEventListener('click', () => dropdown.classList.toggle('open'))
+
+    function openDialog(type) {
+      formType = type
+      msgEl.textContent = ''
+      dropdown.classList.remove('open')
+      overlay.style.display = 'block'
+      dialog.style.display = 'block'
+
+      switch (type) {
+        case 'login':
+          titleEl.textContent = 'Log In'
+          bodyEl.innerHTML = `
+          <input id="inp-email" type="email" placeholder="Email"/>
+          <input id="inp-password" type="password" placeholder="Password"/>`
+          submitBtn.textContent = 'Log In'
+          break
+
+        case 'signup':
+          titleEl.textContent = 'Sign Up'
+          bodyEl.innerHTML = `
+          <input id="inp-email" type="email" placeholder="Email"/>
+          <input id="inp-password" type="password" placeholder="Password"/>
+          <input id="inp-password2" type="password" placeholder="Confirm Password"/>`
+          submitBtn.textContent = 'Sign Up'
+          break
+
+        case 'changeEmail':
+          titleEl.textContent = 'Change Email'
+          bodyEl.innerHTML = `<input id="inp-newEmail" type="email" placeholder="New Email"/>`
+          submitBtn.textContent = 'Update Email'
+          break
+
+        case 'changePass':
+          titleEl.textContent = 'Change Password'
+          bodyEl.innerHTML = `
+          <input id="inp-newPass" type="password" placeholder="New Password"/>`
+          submitBtn.textContent = 'Update Password'
+          break
+
+        case 'signOut':
+          titleEl.textContent = 'Confirm Sign Out'
+          bodyEl.innerHTML = `<p>Are you sure?</p>`
+          submitBtn.textContent = 'Yes, Sign Out'
+          break
+      }
+    }
+
+    closeBtn.onclick = closeModal
+    overlay.onclick = closeModal
+    function closeModal() {
+      dialog.style.display = 'none'
+      overlay.style.display = 'none'
+    }
+
+    submitBtn.onclick = async () => {
+      msgEl.textContent = ''
+      try {
+        let result, error
+
+        if (formType === 'login') {
+          const email = bodyEl.querySelector('#inp-email').value.trim()
+          const password = bodyEl.querySelector('#inp-password').value
+          if (!email || !password) throw new Error('Both fields required')
+
+          result = await supabase.auth.signInWithPassword({ email, password })
+          error = result.error
+          if (!error && !result.data.session) {
+            error = new Error('Invalid credentials')
+          }
+
+        } else if (formType === 'signup') {
+          const email = bodyEl.querySelector('#inp-email').value.trim()
+          const password = bodyEl.querySelector('#inp-password').value
+          const password2 = bodyEl.querySelector('#inp-password2').value
+          if (!email || !password || password !== password2) {
+            throw new Error('Passwords must match and not be empty')
+          }
+
+          result = await supabase.auth.signUp({ email, password })
+          error = result.error
+
+        } else if (formType === 'changeEmail') {
+          const newEmailInput = bodyEl.querySelector('#inp-newEmail')
+          const newEmail = newEmailInput?.value.trim()
+          if (!newEmail) {
+            throw new Error('Enter a new email')
+          }
+          const result = await supabase.auth.updateUser({ email: newEmail })
+          if (result.error) throw result.error
+
+          msgEl.style.color = '#2ecc71'
+          msgEl.textContent = 'Confirmation email sent! Please check your inbox.'
+
+          return
+        } else if (formType === 'changePass') {
+          const newPass = bodyEl.querySelector('#inp-newPass').value
+          if (!newPass) throw new Error('Enter a new password')
+
+          result = await supabase.auth.updateUser({ password: newPass })
+          error = result.error
+
+        } else if (formType === 'signOut') {
+          result = await supabase.auth.signOut()
+          error = result.error
+        }
+
+        if (error) throw error
+
+        msgEl.style.color = '#2ecc71'
+        msgEl.textContent = formType === 'signOut' ? 'Signed out!' : 'Success!'
+        setTimeout(() => {
+          closeModal()
+          buildDropdown()
+        }, 800)
+
+      } catch (e) {
+        msgEl.style.color = '#e74c3c'
+        msgEl.textContent = e.message
+        console.error(e)
+      }
+    }
+
+    async function buildDropdown() {
+      const { data: sessData } = await supabase.auth.getSession()
+      const session = sessData.session
+
+      if (session) {
+        opts.innerHTML = `
+        <button id="opt-changeEmail">Change Email</button>
+        <button id="opt-changePass">Change Password</button>
+        <button id="opt-signOut">Sign Out</button>`
+        document.getElementById('opt-changeEmail')
+          .onclick = () => openDialog('changeEmail')
+        document.getElementById('opt-changePass')
+          .onclick = () => openDialog('changePass')
+        document.getElementById('opt-signOut')
+          .onclick = () => openDialog('signOut')
+
+      } else {
+        opts.innerHTML = `
+        <button id="opt-login">Log In</button>
+        <button id="opt-signup">Sign Up</button>`
+        document.getElementById('opt-login')
+          .onclick = () => openDialog('login')
+        document.getElementById('opt-signup')
+          .onclick = () => openDialog('signup')
+      }
+    }
+    supabase.auth.onAuthStateChange(() => buildDropdown())
+    buildDropdown()
+  </script>
+
+  </body>
+
 </html>
