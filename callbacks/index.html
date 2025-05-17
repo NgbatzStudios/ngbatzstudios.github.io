@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Callback | Ngbatz Studios</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.5/dist/umd/supabase.min.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d0d0d;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(0, 204, 255, 0.2), 0 0 10px rgba(0, 204, 255, 0.1);
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2em;
+      background: linear-gradient(90deg, #00ccff, #0077ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+    }
+
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      font-size: 1em;
+      border: 2px solid #00ccff;
+      background: #111;
+      color: #00ccff;
+      border-radius: 10px;
+      outline: none;
+      margin-bottom: 20px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(to right, #00ccff, #0077ff);
+      border: none;
+      color: black;
+      font-weight: bold;
+      font-size: 1em;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    .success {
+      color: #00ccff;
+      font-weight: bold;
+    }
+
+    .error {
+      color: #ff5555;
+      font-weight: bold;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="card" id="content">
+    <h1>Loading...</h1>
+    <p>Verifying your request...</p>
+  </div>
+
+  <script>
+    const supabase = window.supabase.createClient(
+      'https://smfttfdkzcfqblovmtiu.supabase.co',
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNtZnR0ZmRremNmcWJsb3ZtdGl1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDczODkwMzQsImV4cCI6MjA2Mjk2NTAzNH0.LYD6ztSzML9iZceBijQUv9xnXzYjh2fsmDE2r56NmrY'
+    );
+
+    function parseHashParams(hash) {
+      const params = {};
+      hash.replace(/^#/, '').split('&').forEach(part => {
+        const [key, value] = part.split('=');
+        params[key] = decodeURIComponent(value || '');
+      });
+      return params;
+    }
+
+    window.onload = async () => {
+      const params = parseHashParams(window.location.hash);
+      const type = params.type;
+      const access_token = params.access_token;
+
+      const content = document.getElementById('content');
+
+      if (!type || !access_token) {
+        content.innerHTML = `
+          <h1>Error</h1>
+          <p class="error">Invalid or expired link.</p>
+        `;
+        return;
+      }
+
+      const { error } = await supabase.auth.setSession({
+        access_token: access_token,
+        refresh_token: params.refresh_token || ''
+      });
+
+      if (error) {
+        content.innerHTML = `
+          <h1>Authentication Failed</h1>
+          <p class="error">${error.message}</p>
+        `;
+        return;
+      }
+
+      if (type === 'recovery') {
+        content.innerHTML = `
+          <h1>Reset Password</h1>
+          <p>Enter your new password below:</p>
+          <input type="password" id="new-password" placeholder="New Password" />
+          <button onclick="changePassword()">Update Password</button>
+          <p id="status" class="hidden"></p>
+        `;
+      } else if (type === 'signup') {
+        content.innerHTML = `
+          <h1>Welcome!</h1>
+          <p class="success">Your email has been confirmed. You're all set!</p>
+        `;
+      } else if (type === 'email_change') {
+        content.innerHTML = `
+          <h1>Email Updated</h1>
+          <p class="success">Your email address was successfully changed.</p>
+        `;
+      } else {
+        content.innerHTML = `
+          <h1>Unknown Link</h1>
+          <p class="error">This action is not recognized.</p>
+        `;
+      }
+    };
+
+    async function changePassword() {
+      const newPassword = document.getElementById('new-password').value;
+      const status = document.getElementById('status');
+      status.classList.remove('hidden');
+
+      if (newPassword.length < 6) {
+        status.textContent = 'Password must be at least 6 characters.';
+        status.className = 'error';
+        return;
+      }
+
+      const { error } = await supabase.auth.updateUser({
+        password: newPassword
+      });
+
+      if (error) {
+        status.textContent = error.message;
+        status.className = 'error';
+      } else {
+        status.textContent = 'Password successfully updated! 🎉';
+        status.className = 'success';
+      }
+    }
+  </script>
+</body>
+</html>
